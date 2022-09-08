@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+    function fn_validate(){ 
+        // <form> 태그의 name 속성으로 <form> 태그의 객체를 받아온다.
+        var frmLogin=document.frmLogin;
+        // <form> 태그 내 <input> 태그의 name 속성으로 입력한 ID와 비밀번호를 받아 온다.
+        var user_id=frmLogin.user_id.value;
+        var user_pw=frmLogin.user_pw.value;
+  
+        if((user_id.length==0 ||user_id=="") ||(user_pw.length==0 ||user_pw=="")){
+            alert("아이디와 비밀번호는 필수입니다.");
+        } else {
+            // <form> 태그의 전송 장식을 post로 설정한다.
+            frmLogin.method="post";
+            // action 속성을 서블릿 매핑 이름인 login5로 설정
+            frmLogin.action="login5";
+            // 자바스크립트에서 서블릿으로 전송
+            frmLogin.submit();
+        }
+    }
+</script>  
+<title>로그인창</title>
+</head>
+<body>
+    <form name="frmLogin" method="post" action="login" encType="UTF-8">
+	        아이디  :<input type="text" name="user_id" /><br />
+	        비밀번호:<input type="password" name="user_pw" /><br />
+        <input type="button" onClick="fn_validate()" value="로그인" />
+        <input type="reset" value="다시입력" />
+        <input type="hidden" name="user_address" value="서울시 성북구" />
+    </form>
+</body>
+</html>
