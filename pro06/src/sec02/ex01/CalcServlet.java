@@ -21,26 +21,29 @@ public class CalcServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		//toString(); 메서드를 재정의 하는 불편함을 없애기 위해서 쓴다.
 		PrintWriter pw = response.getWriter();
 		// 수행할 요청을 받아 온다.
-		String command = request.getParameter("command");
+		String command = request.getParameter("command"); //command = calculate
 		// 변환할 원화를 받아 온다.
-		String won = request.getParameter("won");
+		String won = request.getParameter("won"); // won = 1억 
 		// 반환할 외화 종류를 받아 온다.
-		String operator = request.getParameter("operator");
+		String operator = request.getParameter("operator"); // operator = dollar
 		
 		if (command != null && command.equals("calculate")) {
 			String result = calculate(Float.parseFloat(won), operator);
-			pw.print("<html><font size=10>변환결과</font><br>");
-			pw.print("<html><font size=10>" + result + "</font><br>");
+			pw.print("<html>");
+			pw.print("<font size=10>변환결과</font><br />");
+			pw.print("<font size=10>" + result + "</font><br />");
 			pw.print("<a href='/pro06/calc'>환율 계산기 </a>");
+			pw.print("</html>");
 			return;
 		}
 		
         pw.print("<html><title>환율계산기</title>");
-        pw.print("<font size=5>환율 계산기</font><br>");		
-        pw.print("<form  name='frmCalc' method='get'  action='/pro06/calc'  />  ");
-        pw.print("원화: <input type='text' name='won' size=10  />  ");	
+        pw.print("<font size=5>환율 계산기</font><br />");		
+        pw.print("<form  name='frmCalc' method='get'  action='/pro06/calc' />  ");
+        pw.print("원화: <input type='text' name='won' size=10 />  ");	
         pw.print("<select name='operator' >");
         pw.print("<option value='dollar'>달러</option>");
         pw.print("<option value='en'>엔화</option>");
