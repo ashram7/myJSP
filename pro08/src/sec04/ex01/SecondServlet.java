@@ -1,4 +1,4 @@
-package sec01.ex03;
+package sec04.ex01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,18 +9,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/first")
-public class FirstServlet extends HttpServlet{
+//@WebServlet("/second")
+public class SecondServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		//response.sendRedirect("second");
-		//response.addHeader("Refresh","1;url=second");
-		out.print("<script>");
-		out.print("location.href='second';");
-		out.print("</script>");
+		
+		String address = (String) request.getAttribute("address");
+		out.println("<html><body>");
+		out.println("주소:" + address);
+		out.println("<br />");
+		out.println("redirect를 이용한 바인딩 실습입니다.");
+		out.println("</body></html>");		
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

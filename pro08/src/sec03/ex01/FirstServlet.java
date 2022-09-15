@@ -1,8 +1,8 @@
-package sec01.ex03;
+package sec03.ex01;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +15,13 @@ public class FirstServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		//response.sendRedirect("second");
-		//response.addHeader("Refresh","1;url=second");
-		out.print("<script>");
-		out.print("location.href='second';");
-		out.print("</script>");
+		
+		RequestDispatcher dispatch = request.getRequestDispatcher("second?name=lee");
+		dispatch.forward(request, response);
 	}
 	
 }
+
+
+
+

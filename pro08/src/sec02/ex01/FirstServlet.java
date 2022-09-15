@@ -1,4 +1,4 @@
-package sec01.ex03;
+package sec02.ex01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,11 +16,8 @@ public class FirstServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		//response.sendRedirect("second");
-		//response.addHeader("Refresh","1;url=second");
-		out.print("<script>");
-		out.print("location.href='second';");
-		out.print("</script>");
+		//변수 달아서 보내기
+		response.sendRedirect("second?name=lee");
 	}
 	
 }

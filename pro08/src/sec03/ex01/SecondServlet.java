@@ -1,4 +1,4 @@
-package sec01.ex03;
+package sec03.ex01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,18 +9,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/first")
-public class FirstServlet extends HttpServlet{
+//@WebServlet("/second")
+public class SecondServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		//response.sendRedirect("second");
-		//response.addHeader("Refresh","1;url=second");
-		out.print("<script>");
-		out.print("location.href='second';");
-		out.print("</script>");
+
+		out.println("<html><body>");
+		String name=request.getParameter("name");
+		out.println("이름:"+name);
+		out.println("<br>");
+		out.println("dispatch를 이용한 forward 실습입니다.");
+		out.println("</body></html>");		
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
