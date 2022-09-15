@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.CycleRecoverable.Context"/>
 </qualifiedTypeNameHistroy>

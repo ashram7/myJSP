@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import sec02.ex02.MemberDAO;
 import sec02.ex02.MemberVO;
 
-//@WebServlet("/member3")
-public class MemberServlet extends HttpServlet{
+@WebServlet("/member3")
+public class MemberServlet3 extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -50,6 +50,9 @@ public class MemberServlet extends HttpServlet{
 			 vo.setName(_name);
 			 vo.setEmail(_email);	
 			 dao.addMember(vo);
+		}else if(command!= null && command.equals("delMember")) {
+	    	  String id = request.getParameter("id");
+	    	  dao.delMember(id);			
 		}
 		List list=dao.listMembers();
 		out.print("<html><body>");
@@ -67,7 +70,7 @@ public class MemberServlet extends HttpServlet{
 		                +name+"</td><td>"
 		                +email+"</td><td>"
 		                +joinDate+"</td><td>"
-	                    +"&nbsp;</td></tr>");	 		
+		                +"<a href='/pro07/member3?command=delMember&id="+id+"'>삭제 </a></td></tr>");		
 		}
 		out.print("</table></body></html>");
 		out.print("<a href='/pro07/memberForm.html'>새 회원 등록하기</a>");
