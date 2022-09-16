@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 		initParams = { 
 				@WebInitParam(name = "email", value = "ashram7@hanmail.net"), 
 				@WebInitParam(name = "tel", value = "010-5443-0288")
-		})
+		}
+)
 public class InitParamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
