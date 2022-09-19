@@ -7,4 +7,6 @@
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.CycleRecoverable.Context"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
 </qualifiedTypeNameHistroy>
