@@ -34,7 +34,7 @@
         maxWait="-1" />    
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
+
     <Manager pathname="" />
-    -->
+
 </Context>
