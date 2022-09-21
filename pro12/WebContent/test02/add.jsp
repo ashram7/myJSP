@@ -19,6 +19,6 @@
 <body>
 <h2>합계 구하기</h2>
 <h1>1부터 <%=num  %>까지의 합은 <%=sum  %>입니다</h1>
-<a href='add.html'>다시하기</a>
+<a href='add1.html'>다시하기</a>
 </body>
 </html>
