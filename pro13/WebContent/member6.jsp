@@ -2,11 +2,14 @@
      import="java.util.*,sec01.ex01.*" 
     pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("UTF-8");
+  request.setCharacterEncoding("UTF-8");
 %>    
+
 <jsp:useBean  id="m"  class="sec01.ex01.MemberBean"  scope="page"/>
 <jsp:setProperty name="m" property="*" />
+
 <%
+
    MemberDAO  memberDAO=new MemberDAO();
    memberDAO.addMember(m);
    List membersList = memberDAO.listMembers();	

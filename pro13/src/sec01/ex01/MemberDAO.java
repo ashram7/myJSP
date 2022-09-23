@@ -65,17 +65,15 @@ public class MemberDAO {
 			String pwd = memberBean.getPwd();
 			String name = memberBean.getName();
 			String email = memberBean.getEmail();
-			Date joinDate = memberBean.getJoinDate();
 			String query = "insert into t_member";
-			query += " (id,pwd,name,email,joinDate)";
-			query += " values(?,?,?,?,?)";
+			query += " (id,pwd,name,email)";
+			query += " values(?,?,?,?)";
 			System.out.println("prepareStatememt: " + query);
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
 			pstmt.setString(3, name);
 			pstmt.setString(4, email);
-			pstmt.setDate(5, joinDate);
 			pstmt.executeUpdate();
 			pstmt.close();
 		} catch (Exception e) {

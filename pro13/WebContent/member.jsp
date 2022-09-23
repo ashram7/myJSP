@@ -10,7 +10,6 @@
    String  pwd = request.getParameter("pwd");
    String  name = request.getParameter("name");
    String  email = request.getParameter("email");
-   //Date  joinDate = request.getParameter("joinDate");
  
   
    MemberBean  m =  new MemberBean(id, pwd, name, email);
