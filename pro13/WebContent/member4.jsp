@@ -4,24 +4,12 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>    
-	<jsp:useBean  id="m"  class="sec01.ex01.MemberBean"  scope="page"/>
-<jsp:setProperty name="m"  property="id"    value='<%= request.getParameter("id") %>'  />
-<jsp:setProperty name="m"  property="pwd"   value='<%= request.getParameter("pwd") %>'  />
-<jsp:setProperty name="m"  property="name"  value='<%= request.getParameter("name") %>'  />
-<jsp:setProperty name="m"  property="email" value='<%= request.getParameter("email") %>'  />	
+<jsp:useBean  id="m"  class="sec01.ex01.MemberBean"  scope="page"/>
+<jsp:setProperty name="m"  property="id"       param="id"  />
+<jsp:setProperty name="m"  property="pwd"    param="pwd"  />
+<jsp:setProperty name="m"  property="name"      param="name"/>
+<jsp:setProperty name="m"  property="email"   param="email" />	
 <%
-   /* String   id=request.getParameter("id");
-   String  pwd = request.getParameter("pwd");
-   String  name = request.getParameter("name");
-   String  email = request.getParameter("email"); */
- 
-  
-   //MemberBean  m =  new MemberBean(id, pwd, name, email);
-   /* m.setId(id);
-   m.setPwd(pwd);
-   m.setName(name);
-   m.setEmail(email); */
-   
    MemberDAO  memberDAO=new MemberDAO();
    memberDAO.addMember(m);
    List membersList = memberDAO.listMembers();	

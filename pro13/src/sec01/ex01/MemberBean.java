@@ -15,11 +15,12 @@ public class MemberBean {
 	}
 
 
-	public MemberBean(String id, String pwd, String name, String email) {
+	public MemberBean(String id, String pwd, String name, String email, Date joinDate) {
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
 		this.email = email;
+		this.joinDate = joinDate;
 	}
 
 
@@ -71,4 +72,7 @@ public class MemberBean {
 	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
+
+
+	
 }
