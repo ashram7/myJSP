@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class MemberDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
 	private DataSource dataFactory;
-	
+
 	public MemberDAO() {
 		try {
 			Context ctx = new InitialContext();
@@ -25,7 +26,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public List listMembers() {
 		List list = new ArrayList();
 		try {
@@ -45,19 +46,18 @@ public class MemberDAO {
 				vo.setPwd(pwd);
 				vo.setName(name);
 				vo.setEmail(email);
-				vo.setJoinDate(joinDate);	
+				vo.setJoinDate(joinDate);
 				list.add(vo);
 			}
 			rs.close();
 			pstmt.close();
-			con.close();			
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return list;
 	}
-	
+
 	public void addMember(MemberBean memberBean) {
 		try {
 			Connection con = dataFactory.getConnection();
@@ -75,18 +75,9 @@ public class MemberDAO {
 			pstmt.setString(3, name);
 			pstmt.setString(4, email);
 			pstmt.executeUpdate();
-			pstmt.close();			
+			pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
