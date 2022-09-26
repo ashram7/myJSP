@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- action="member1.jsp" 이 부분을 계속 고쳐가면서 진행 -->
-<form method="post"   action="forward.jsp">
+<form method="post"   action="member4.jsp">
 <h1  style="text-align:center">회원 가입창</h1>
 <table  align="center">
     <tr>
