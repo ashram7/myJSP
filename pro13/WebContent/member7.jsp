@@ -9,7 +9,6 @@
 <jsp:setProperty name="m" property="*" />
 
 <%
-
    MemberDAO  memberDAO=new MemberDAO();
    memberDAO.addMember(m);
    List membersList = memberDAO.listMembers();	
