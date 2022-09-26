@@ -20,30 +20,30 @@
 </head>
 <body>
 <table border="1"  align="center" >
-    <tr align="center" bgcolor="#99ccff">
-      <td width="20%"><b>아이디</b></td>
-      <td width="20%"><b>비밀번호</b></td>
-      <td width="20%" ><b>이름</b></td>
-      <td width="20%"><b>이메일</b></td>
+   <tr align="center"  bgcolor="#99ccff" >
+      <td width="7%"><b>아이디</b></td>
+      <td width="7%"><b>비밀번호</b></td>
+      <td width="5%" ><b>이름</b></td>
+      <td width="5%"><b>이메일</b></td>
+      <td width="5%" ><b>도시</b></td>
+      <td width="5%" ><b>우편번호</b></td>
    </tr>
-<tr align=center>
-      <td>${membersMap.id}</td>
-      <td>${membersMap.pwd}</td>
-      <td>${membersMap.name}</td>
-      <td>${membersMap.email }</td> 
-</tr>   
-    <tr align=center>
-      <td>${membersMap.membersList[0].id}</td>
-      <td>${membersMap.membersList[0].pwd}</td>
-      <td>${membersMap.membersList[0].name}</td>
-      <td>${membersMap.membersList[0].email}</td>
+   <tr align="center">
+      <td>${m.id } </td>
+      <td>${m.pwd } </td>
+      <td>${m.name } </td>
+      <td>${m.email}</td>
+      <td><%=m.getAddr().getCity() %></td>
+      <td><%=m.getAddr().getZipcode() %></td>   
    </tr>
-   <tr align=center>
-      <td>${membersMap.membersList[1].id}</td>
-      <td>${membersMap.membersList[1].pwd}</td>
-      <td>${membersMap.membersList[1].name}</td>
-      <td>${membersMap.membersList[1].email}</td>
-	</tr>
+   <tr align="center">
+      <td>${m.id } </td>
+      <td>${m.pwd } </td>
+      <td>${m.name} </td>
+      <td>${m.email}</td>
+      <td>${m.addr.city}</td>
+      <td>${m.addr.zipcode}</td>
+   </tr>
 </table>
 </body>
 </html>
