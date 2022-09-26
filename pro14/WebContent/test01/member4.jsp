@@ -4,7 +4,7 @@
 <%
    request.setCharacterEncoding("UTF-8");
 %>      
-<jsp:useBean  id="m1" class="sec01.ex01.MemberBean" />\
+<jsp:useBean  id="m1" class="sec01.ex01.MemberBean" />
 <!-- 회원 가입창에서 전송된 정보를 빈 속성에 설정 -->
 <jsp:setProperty  name="m1" property="*" />
 <jsp:useBean  id="membersList" class="java.util.ArrayList" />
