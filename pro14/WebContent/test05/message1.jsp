@@ -13,7 +13,7 @@
 	<title>JSTL 다국어 기능</title>
 </head>
 <body>
-<%-- <fmt:setLocale value="en_US" /> --%>
+<fmt:setLocale value="en_US" />
 <fmt:setLocale value="ko_KR" />
 
 <h1>
@@ -24,5 +24,6 @@
   직업:<fmt:message key="mem.job" />
 </fmt:bundle>
 </h1>
+
 </body>
 </html>
