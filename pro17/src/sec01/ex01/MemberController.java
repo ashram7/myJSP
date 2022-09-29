@@ -33,6 +33,5 @@ public class MemberController extends HttpServlet {
 		request.setAttribute("membersList", membersList);
 		RequestDispatcher dispatch = request.getRequestDispatcher("/test01/listMembers.jsp");
 		dispatch.forward(request, response);		
-	}	
-	
+	}		
 }
