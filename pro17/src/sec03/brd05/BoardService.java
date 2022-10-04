@@ -1,5 +1,6 @@
 package sec03.brd05;
 
+
 import java.util.List;
 
 public class BoardService {
@@ -26,6 +27,5 @@ public class BoardService {
 	
 	public void modArticle(ArticleVO article) {
 		boardDAO.updateArticle(article);
-	}
-
+	}	
 }

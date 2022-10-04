@@ -18,8 +18,9 @@ public class ArticleVO {
 	public ArticleVO() {
 		
 	}
-	
-	public ArticleVO(int level, int articleNO, int parentNO, String title, String content, String imageFileName, String id) {
+
+	public ArticleVO(int level, int articleNO, int parentNO, String title, String content, String imageFileName,
+			String id) {
 		super();
 		this.level = level;
 		this.articleNO = articleNO;
@@ -103,7 +104,5 @@ public class ArticleVO {
 
 	public void setWriteDate(Date writeDate) {
 		this.writeDate = writeDate;
-	}	
-	
-	
+	}
 }
