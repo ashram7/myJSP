@@ -11116,3 +11116,6 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 !ENTRY org.eclipse.jface.text 2 0 2022-10-04 12:06:31.398
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-10-04 13:42:08.280
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
