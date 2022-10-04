@@ -27,6 +27,7 @@
    </td>
    <td >
     <input type="text"  value="${article.articleNO }"  disabled />
+    <!-- 글 수정 시 글 번호를 컨트롤러로 전송하기 위해 미리 <hidden> 태그를 이용해 글 번호를 저장한다. -->
     <input type="hidden" name="articleNO" value="${article.articleNO}"  />
    </td>
   </tr>
