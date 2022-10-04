@@ -1,4 +1,4 @@
-package sec03.brd05;
+package sec03.brd06;
 
 import java.net.URLEncoder;
 import java.sql.Connection;
@@ -182,4 +182,30 @@ public class BoardDAO {
 		}
 	}
 
+    public void deleteArticle(int  articleNO) {
+        try {
+            conn = dataFactory.getConnection();
+            String query = "DELETE FROM t_board ";
+            query += " WHERE articleNO in (";
+            query += "  SELECT articleNO FROM  t_board ";
+            query += " START WITH articleNO = ?";
+            query += " CONNECT BY PRIOR  articleNO = parentNO )";
+            System.out.println(query);
+            pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1, articleNO);
+            pstmt.executeUpdate();
+            pstmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+	
+	
+	
+	
+	
+	
+	
+	
 }
